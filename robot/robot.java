@@ -27,7 +27,7 @@ public class robot{
     
     /*
      * place the robot in a apecific grid and turn it to a specific direction
-     * return ture if place correctly
+     * return true if place correctly
      * otherwise return false
      */
     public boolean place(int x, int y, String f){
