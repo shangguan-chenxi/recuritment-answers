@@ -40,6 +40,7 @@ public class SolutionTestCase{
             }
             
             if (Pattern.matches("EXIT", cmd)){
+                R.report();
                 break;
             }
             
