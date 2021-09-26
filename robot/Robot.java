@@ -22,7 +22,7 @@ public class Robot{
     public Robot(){
         this.X = this.INVALID;
         this.Y = this.INVALID;
-        this.F = this.EAST;
+        this.F = this.INVALID;
     }
     
     /*
@@ -65,7 +65,7 @@ public class Robot{
      * move one step toward robot's current direction
      */
     public void move(){
-        if (this.X == this.INVALID || this.Y == this.INVALID) return;
+        //if (this.X == this.INVALID || this.Y == this.INVALID || this.F == this.INVALID) return;
         
         // x+1
         if (this.F == this.EAST && this.X < this.SIZE - 1) this.X++;
@@ -84,7 +84,7 @@ public class Robot{
      * Robot turns left
      */
     public void turnLeft(){
-        if (this.X == this.INVALID || this.Y == this.INVALID) return;
+        //if (this.X == this.INVALID || this.Y == this.INVALID || this.F == this.INVALID) return;
         this.F = (this.F + this.LEFT) % 360;
     }
     
@@ -92,7 +92,7 @@ public class Robot{
      * Robot turns right
      */
     public void turnRight(){
-        if (this.X == this.INVALID || this.Y == this.INVALID) return;
+        //if (this.X == this.INVALID || this.Y == this.INVALID || this.F == this.INVALID) return;
         if (this.F == this.EAST){
             this.F = this.SOUTH;
         }else{
@@ -104,8 +104,9 @@ public class Robot{
      * Print robot's current position and direction
      */
     public void report(){
-        if (this.X == this.INVALID || this.Y == this.INVALID) return;
+        //if (this.X == this.INVALID || this.Y == this.INVALID || this.F == this.INVALID) return;
         String F = "";
+        if (this.F == this.INVALID) F = "N/A";
         if (this.F == this.EAST) F = this.E;
         if (this.F == this.NORTH) F = this.N;
         if (this.F == this.WEST) F = this.W;
