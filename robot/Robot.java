@@ -55,7 +55,8 @@ public class Robot{
         else if(f.equals(this.S)){
             this.F = this.SOUTH;
         }else{
-            this.F = this.EAST;
+            //this.F = this.EAST;
+            return false;
         }
         return true;
     }
